@@ -72,7 +72,6 @@ function prevQuestion() {
     currentQ--;
     renderQuestion();
     updateProgress();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
 
@@ -90,7 +89,6 @@ function nextQuestion() {
     currentQ++;
     renderQuestion();
     updateProgress();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
     showResult();
   }
@@ -140,7 +138,7 @@ function showResult() {
       </div>
       ${sorted.slice(0, 5).map(([id, score]) => {
         const s = SCHOOLS[id];
-        const pct = Math.round(score / maxScore * 100);
+        const pct = Math.min(90, Math.round(score / maxScore * 100));
         return `
           <div class="score-bar-item">
             <div class="score-bar-header">
@@ -235,7 +233,7 @@ function showResult() {
         ${icon('share2', 20)} 你也可以了解这些流派
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:0.25rem">
-        ${sorted.slice(1, 4).map(([id]) => {
+        ${sorted.slice(1, 5).map(([id]) => {
           const s = SCHOOLS[id];
           return `
             <button onclick="openDetailModal('${id}')"
