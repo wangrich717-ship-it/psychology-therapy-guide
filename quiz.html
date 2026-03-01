@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心理咨询流派测试 · 找到适合你的方向</title>
+  <meta name="description" content="通过20道问题，找到最适合你的心理咨询流派方向。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="quiz-page-body">
+
+<!-- 顶部导航 -->
+<nav class="quiz-page-nav">
+  <a href="index.html" class="back-link" id="back-link">
+    <span id="back-icon"></span>
+    返回首页
+  </a>
+  <span class="quiz-page-title" id="nav-quiz-title">心理咨询流派指南</span>
+  <div style="width:80px"></div>
+</nav>
+
+<!-- 主内容区 -->
+<main class="quiz-page-main">
+
+  <!-- 进度条（答题时显示） -->
+  <div class="quiz-progress" id="quiz-progress" style="display:none">
+    <div class="progress-info">
+      <span id="progress-label">进度</span>
+      <span id="progress-text">1 / 20</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- 开始页 -->
+  <div class="quiz-start-card" id="quiz-start">
+    <div class="quiz-start-icon" id="quiz-start-icon"></div>
+    <h2>找到适合你的疗愈方向</h2>
+    <p>这个测试不评判对错，也没有"最好"的答案。只有最适合你此刻状态的方向。</p>
+    <p>请根据你<strong>近期最真实的感受</strong>来回答，不需要想太多，选第一反应即可。</p>
+    <div class="quiz-start-meta">
+      <div class="quiz-start-meta-item"><span id="meta-doc-icon"></span> 共 20 题，每题 6 个选项</div>
+      <div class="quiz-start-meta-item"><span id="meta-clock-icon"></span> 约 8-10 分钟</div>
+      <div class="quiz-start-meta-item"><span id="meta-lock-icon"></span> 结果仅供参考，不做诊断</div>
+    </div>
+    <div class="disclaimer" style="margin-bottom:2rem;text-align:left">
+      <strong>温馨提示：</strong>本测试仅为科普参考，不能替代专业的心理评估。测试结果是基于你的回答给出的方向性建议，具体是否适合还需与有执照的心理咨询师共同探讨。
+    </div>
+    <button class="btn btn-primary btn-lg" id="start-btn" onclick="startQuiz()">
+      <span id="start-icon"></span>
+      开始测试
+    </button>
+  </div>
+
+  <!-- 题目区 -->
+  <div id="quiz-questions" style="display:none"></div>
+
+  <!-- 结果区 -->
+  <div id="quiz-result" class="quiz-result"></div>
+
+</main>
+
+<!-- 模态框（查看流派详情） -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="icons.js"></script>
+<script src="quiz.js"></script>
+
+<script>
+// 注入图标
+document.getElementById('back-icon').innerHTML = icon('chevronLeft', 18);
+document.getElementById('quiz-start-icon').innerHTML = icon('compass', 40);
+document.getElementById('meta-doc-icon').innerHTML = icon('clipboardList', 16);
+document.getElementById('meta-clock-icon').innerHTML = icon('clock', 16);
+document.getElementById('meta-lock-icon').innerHTML = icon('shieldCheck', 16);
+document.getElementById('start-icon').innerHTML = icon('sparkles', 18);
+</script>
+
+</body>
+</html>

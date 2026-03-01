@@ -5,32 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>心理咨询流派指南 · 找到属于你的疗愈方向</title>
   <meta name="description" content="深度了解八大心理咨询流派，通过专业测试找到最适合你的咨询方向。精神动力、CBT、人本主义、ACT、DBT、创伤疗法、家庭系统、存在主义。">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- ===== 导航 ===== -->
 <nav class="nav">
-  <a class="nav-brand" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
-    🧠 心理咨询流派指南
+  <a class="nav-brand" href="#" onclick="scrollToSection('hero');return false">
+    <span id="nav-brain-icon"></span>
+    心理咨询流派指南
   </a>
   <ul class="nav-links">
-    <li><a data-section="schools-section" onclick="scrollTo('schools-section')">流派介绍</a></li>
-    <li><a data-section="quiz-section" onclick="scrollTo('quiz-section')">适合你的流派</a></li>
-    <li><a data-section="why-section" onclick="scrollTo('why-section')">为什么了解流派</a></li>
+    <li><a data-section="schools-section" onclick="scrollToSection('schools-section');return false">流派介绍</a></li>
+    <li><a data-section="quiz-section" onclick="scrollToSection('quiz-section');return false">适合你的流派</a></li>
+    <li><a data-section="tips-section" onclick="scrollToSection('tips-section');return false">找咨询师</a></li>
   </ul>
 </nav>
 
 <!-- ===== 英雄区 ===== -->
 <section class="hero" id="hero">
   <div class="hero-content">
-    <div class="hero-badge">🌿 专业 · 有温度 · 有深度</div>
+    <div class="hero-badge">
+      <span id="hero-badge-icon"></span>
+      专业 · 有温度 · 有深度
+    </div>
     <h1>
       找到属于你的<br>
       <span>疗愈方向</span>
@@ -40,10 +41,11 @@
       了解它们，你就拥有了选择的权利——而不只是随机碰运气。
     </p>
     <div class="btn-group">
-      <button class="btn btn-primary btn-lg" onclick="scrollTo('quiz-section')">
-        ✨ 测试适合我的流派
-      </button>
-      <button class="btn btn-outline btn-lg" onclick="scrollTo('schools-section')">
+      <a href="quiz.html" class="btn btn-primary btn-lg">
+        <span id="btn-quiz-icon"></span>
+        测试适合我的流派
+      </a>
+      <button class="btn btn-outline btn-lg" onclick="scrollToSection('schools-section')">
         浏览全部流派
       </button>
     </div>
@@ -54,34 +56,13 @@
 <section class="section section-alt" id="why-section">
   <div class="section-header">
     <div class="section-label">Why It Matters</div>
-    <h2 class="section-title">为什么你需要了解心理咨询流派？</h2>
+    <h2 class="section-title">为什么需要了解心理咨询流派？</h2>
     <p class="section-desc">
       很多人第一次寻求帮助时，并不知道"心理咨询"有这么多种类。
       了解流派，不是为了变成专家，而是为了更好地照顾自己。
     </p>
   </div>
-  <div class="why-grid">
-    <div class="why-card fade-in">
-      <span class="why-icon">🎯</span>
-      <div class="why-title">更好地选择咨询师</div>
-      <div class="why-desc">了解你倾向的疗法方向，在找咨询师时可以主动询问他们擅长的流派，大大提高匹配成功率。</div>
-    </div>
-    <div class="why-card fade-in">
-      <span class="why-icon">🤝</span>
-      <div class="why-title">成为积极的合作者</div>
-      <div class="why-desc">当你理解治疗在做什么，你就不只是被动的"患者"，而是真正参与到自己疗愈过程中的主体。</div>
-    </div>
-    <div class="why-card fade-in">
-      <span class="why-icon">⏱️</span>
-      <div class="why-title">管理合理的期待</div>
-      <div class="why-desc">不同流派的起效速度和深度不同。了解这些，可以避免因为"怎么还没好"而过早放弃。</div>
-    </div>
-    <div class="why-card fade-in">
-      <span class="why-icon">💡</span>
-      <div class="why-title">每种方法都有其智慧</div>
-      <div class="why-desc">每个流派都有独特的人性观和治疗哲学。了解它们，也是了解不同的看待自己和世界的方式。</div>
-    </div>
-  </div>
+  <div class="why-grid" id="why-grid"></div>
 </section>
 
 <!-- ===== 流派介绍 ===== -->
@@ -90,103 +71,53 @@
     <div class="section-label">The Schools</div>
     <h2 class="section-title">八大主流心理咨询流派</h2>
     <p class="section-desc">
-      点击任意流派，深入了解它的理念、适合人群、治疗方式、时长以及优劣势。
+      点击任意流派，深入了解它的理念、适合人群、治疗方式、时长、优劣势和推荐书目。
     </p>
   </div>
-  <div class="schools-grid" id="schools-grid">
-    <!-- 由 JS 动态生成 -->
-  </div>
+  <div class="schools-grid" id="schools-grid"></div>
 </section>
 
-<!-- ===== 测试区 ===== -->
-<section class="section" id="quiz-section">
+<!-- ===== 测试入口 ===== -->
+<section class="section section-warm" id="quiz-section">
   <div class="section-header">
     <div class="section-label">Find Your Match</div>
     <h2 class="section-title">测试：哪种流派最适合你？</h2>
     <p class="section-desc">
-      回答 10 个问题，我们将根据你的困扰类型、应对方式和偏好，为你找到最匹配的疗愈方向。
+      回答 20 个问题，每题 6 个选项，我们将根据你的困扰类型、应对方式和偏好，为你找到最匹配的疗愈方向。
     </p>
   </div>
-
-  <div class="quiz-container">
-
-    <!-- 免责声明 -->
-    <div class="disclaimer">
-      <strong>⚠️ 重要提示：</strong>
-      本测试仅为科普参考，不能替代专业的心理评估和诊断。测试结果是基于你的回答给出的方向性建议，具体是否适合还需要与有执照的心理咨询师共同探讨。如果你正在经历严重的心理困扰，请直接寻求专业帮助。
+  <div class="quiz-promo">
+    <div class="quiz-promo-icon" id="quiz-promo-icon"></div>
+    <h3>找到属于你的方向</h3>
+    <p>这个测试不评判对错，也没有"最好"的答案。只有最适合你此刻状态的方向。</p>
+    <p>请根据你近期最真实的感受来回答，不需要想太多。</p>
+    <div class="quiz-meta">
+      <div class="quiz-meta-item"><span id="meta-doc-icon"></span> 共 20 题</div>
+      <div class="quiz-meta-item"><span id="meta-clock-icon"></span> 约 8 分钟</div>
+      <div class="quiz-meta-item"><span id="meta-lock-icon"></span> 结果不会被保存</div>
     </div>
-
-    <!-- 进度条 -->
-    <div class="quiz-progress">
-      <div class="progress-info">
-        <span>进度</span>
-        <span id="progress-text">1 / 10</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
-      </div>
-    </div>
-
-    <!-- 测试简介 -->
-    <div id="quiz-intro" class="quiz-intro">
-      <span class="quiz-intro-icon">🧭</span>
-      <h3>找到适合你的疗愈方向</h3>
-      <p>这个测试不评判对错，也没有"最好"的答案。只有最适合你此刻的方向。</p>
-      <p>请根据你<strong>近期最真实的状态</strong>来回答，不需要想太多。</p>
-      <div class="quiz-meta">
-        <span>📋 共 10 题</span>
-        <span>⏱️ 约 5 分钟</span>
-        <span>🔒 结果不会被保存</span>
-      </div>
-      <button class="btn btn-primary btn-lg" onclick="quiz.start()">
-        开始测试 →
-      </button>
-    </div>
-
-    <!-- 题目区 -->
-    <div id="quiz-questions" style="display:none"></div>
-
-    <!-- 结果区 -->
-    <div id="quiz-result" class="quiz-result"></div>
-
+    <a href="quiz.html" class="btn btn-primary btn-lg">
+      开始测试
+      <span id="promo-arrow-icon"></span>
+    </a>
   </div>
 </section>
 
-<!-- ===== 温馨提示区 ===== -->
-<section class="section section-alt">
+<!-- ===== 在你找咨询师之前 ===== -->
+<section class="section section-alt" id="tips-section">
   <div class="section-header">
-    <div class="section-label">A Gentle Reminder</div>
+    <div class="section-label">Before You Start</div>
     <h2 class="section-title">在你开始寻找咨询师之前</h2>
+    <p class="section-desc">
+      迈出这一步本身就需要勇气。这里有一些实用的指南，帮助你找到合适的人，并做好准备。
+    </p>
   </div>
-  <div class="why-grid" style="max-width:900px">
-    <div class="why-card fade-in">
-      <span class="why-icon">🌈</span>
-      <div class="why-title">流派不是全部</div>
-      <div class="why-desc">研究表明，治疗效果最重要的因素是治疗关系，而非具体的流派技术。一个你感到安全、被理解的咨询师，胜过所有理论。</div>
-    </div>
-    <div class="why-card fade-in">
-      <span class="why-icon">🔄</span>
-      <div class="why-title">整合疗法很常见</div>
-      <div class="why-desc">大多数有经验的咨询师都会整合多种流派，根据你的需要灵活调整。纯粹的单一流派反而少见。</div>
-    </div>
-    <div class="why-card fade-in">
-      <span class="why-icon">🗣️</span>
-      <div class="why-title">可以直接问咨询师</div>
-      <div class="why-desc">你完全可以在初次咨询时询问："您主要使用什么疗法？""这种方法会如何帮助我的问题？"这是你的权利。</div>
-    </div>
-    <div class="why-card fade-in">
-      <span class="why-icon">💙</span>
-      <div class="why-title">寻求帮助需要勇气</div>
-      <div class="why-desc">无论你最终选择哪种方式，迈出寻求帮助的这一步本身，已经是对自己莫大的善意。你值得被好好照顾。</div>
-    </div>
-  </div>
+  <div class="tips-grid" id="tips-grid"></div>
 </section>
 
 <!-- ===== 模态框 ===== -->
 <div class="modal-overlay" id="modal-overlay">
-  <div class="modal" id="modal" role="dialog" aria-modal="true">
-    <!-- 内容由JS动态生成 -->
-  </div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
 </div>
 
 <!-- ===== 页脚 ===== -->
@@ -206,13 +137,306 @@
     &nbsp;·&nbsp;
     北京心理危机研究与干预中心 <a href="tel:010-82951332">010-82951332</a>
   </p>
-  <p style="margin-top:1rem;opacity:0.5;font-size:0.8rem">
-    Made with 🧡 for mental health literacy
+  <p style="margin-top:1rem;opacity:0.4;font-size:0.8rem">
+    Made with care for mental health literacy
   </p>
 </footer>
 
 <script src="data.js"></script>
-<script src="quiz.js"></script>
+<script src="icons.js"></script>
+<script>
+// ===== 注入图标 =====
+document.getElementById('nav-brain-icon').innerHTML = icon('brain', 22);
+document.getElementById('hero-badge-icon').innerHTML = icon('heart', 16);
+document.getElementById('btn-quiz-icon').innerHTML = icon('sparkles', 18);
+document.getElementById('quiz-promo-icon').innerHTML = icon('compass', 36);
+document.getElementById('meta-doc-icon').innerHTML = icon('clipboardList', 16);
+document.getElementById('meta-clock-icon').innerHTML = icon('clock', 16);
+document.getElementById('meta-lock-icon').innerHTML = icon('shieldCheck', 16);
+document.getElementById('promo-arrow-icon').innerHTML = icon('arrowRight', 18);
 
+// ===== Why 卡片数据 =====
+const WHY_ITEMS = [
+  { icon: 'users', title: '更好地选择咨询师', desc: '了解你倾向的疗法方向，在找咨询师时主动询问他们擅长的流派，大大提高匹配成功率。' },
+  { icon: 'handHeart', title: '成为积极的合作者', desc: '当你理解治疗在做什么，你就不只是被动的"患者"，而是真正参与到自己疗愈过程中的主体。' },
+  { icon: 'clock', title: '管理合理的期待', desc: '不同流派的起效速度和深度不同。了解这些，可以避免因为"怎么还没好"而过早放弃。' },
+  { icon: 'lightbulb', title: '每种方法都有其智慧', desc: '每个流派都有独特的人性观和治疗哲学。了解它们，也是了解不同的看待自己和世界的方式。' }
+];
+
+const whyGrid = document.getElementById('why-grid');
+WHY_ITEMS.forEach((item, i) => {
+  const card = document.createElement('div');
+  card.className = 'why-card fade-in';
+  card.innerHTML = `
+    <div class="why-icon-wrap">${icon(item.icon, 22)}</div>
+    <div class="why-title">${item.title}</div>
+    <div class="why-desc">${item.desc}</div>
+  `;
+  whyGrid.appendChild(card);
+});
+
+// ===== 流派卡片渲染 =====
+const schoolsGrid = document.getElementById('schools-grid');
+Object.values(SCHOOLS).forEach((school, i) => {
+  const card = document.createElement('div');
+  card.className = 'school-card fade-in';
+  card.style.setProperty('--card-color', school.color);
+  card.style.setProperty('--card-bg', school.color + '18');
+  card.onclick = () => openModal(school.id);
+
+  const suitTags = school.suitableFor.slice(0, 3);
+  card.innerHTML = `
+    <div class="card-icon-wrap" style="background:${school.color}18">
+      <span style="color:${school.color}">${icon(school.icon, 26)}</span>
+    </div>
+    <div class="card-name">${school.name}</div>
+    <div class="card-subtitle">${school.subtitle}</div>
+    <div class="card-tags">
+      ${suitTags.map(t => `<span class="tag">${t.length > 13 ? t.slice(0, 13) + '…' : t}</span>`).join('')}
+    </div>
+  `;
+  schoolsGrid.appendChild(card);
+});
+
+// ===== Tips 卡片数据 =====
+const TIPS = [
+  {
+    icon: 'rainbow',
+    iconBg: '#FEF3E6',
+    iconColor: '#E07C1A',
+    title: '流派不是全部',
+    desc: '研究表明，治疗效果最重要的因素是治疗关系，而非具体的流派技术。一个你感到安全、被理解的咨询师，胜过所有理论。'
+  },
+  {
+    icon: 'gitMerge',
+    iconBg: '#EEF5FF',
+    iconColor: '#5B7BA8',
+    title: '整合疗法很常见',
+    desc: '大多数有经验的咨询师都会整合多种流派，根据你的需要灵活调整。纯粹的单一流派反而少见，不必执着于"哪个流派"。'
+  },
+  {
+    icon: 'shieldCheck',
+    iconBg: '#F2FBF5',
+    iconColor: '#3D8A6E',
+    title: '如何识别靠谱咨询师',
+    desc: '看执照（心理治疗师/咨询师资质）、看督导经历、看是否有你问题的专门培训。红灯预警：承诺"保证治愈"、要求你保密、与你发展私人关系。'
+  },
+  {
+    icon: 'clipboardList',
+    iconBg: '#F5F0FB',
+    iconColor: '#7A589A',
+    title: '第一次咨询怎么准备',
+    desc: '整理你最想谈的主要困扰（1-3个），思考你的目标是什么，记住：第一次只是相互了解，不需要"表现好"，你完全可以带着紧张去。'
+  },
+  {
+    icon: 'messageCircle',
+    iconBg: '#FEF5E6',
+    iconColor: '#C44B3B',
+    title: '可以直接问咨询师',
+    desc: '你完全可以在初次咨询时询问："您主要使用什么疗法？""这种方法会如何帮助我的问题？""您处理过类似困扰吗？"这是你的权利。'
+  },
+  {
+    icon: 'heart',
+    iconBg: '#FEF3F3',
+    iconColor: '#C44B3B',
+    title: '寻求帮助需要勇气',
+    desc: '无论你最终选择哪种方式，迈出寻求帮助的这一步本身，已经是对自己莫大的善意。你值得被好好照顾。'
+  }
+];
+
+const tipsGrid = document.getElementById('tips-grid');
+TIPS.forEach((tip, i) => {
+  const card = document.createElement('div');
+  card.className = 'tip-card fade-in';
+  card.innerHTML = `
+    <div class="tip-icon-wrap" style="background:${tip.iconBg};color:${tip.iconColor}">
+      ${icon(tip.icon, 22)}
+    </div>
+    <div class="tip-title">${tip.title}</div>
+    <div class="tip-desc">${tip.desc}</div>
+  `;
+  tipsGrid.appendChild(card);
+});
+
+// ===== 模态框 =====
+function openModal(schoolId) {
+  const school = SCHOOLS[schoolId];
+  if (!school) return;
+  const overlay = document.getElementById('modal-overlay');
+  const modal = document.getElementById('modal');
+
+  modal.innerHTML = `
+    <div class="modal-header" style="background:${school.gradient}">
+      <button class="modal-close" onclick="closeModal()" aria-label="关闭">
+        ${icon('xIcon', 18)}
+      </button>
+      <div class="modal-icon-wrap">
+        <span style="color:white">${icon(school.icon, 32)}</span>
+      </div>
+      <div class="modal-title">${school.name}</div>
+      <div class="modal-subtitle">${school.subtitle}</div>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          什么是${school.name}？
+        </div>
+        <p style="color:var(--text-body);line-height:1.9;font-size:0.97rem">${school.overview}</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          核心理念
+        </div>
+        <div class="philosophy-box" style="border-left-color:${school.color}">${school.philosophy}</div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          如何工作？
+        </div>
+        <ul class="list-check">
+          ${school.howItWorks.map(h => `
+            <li>
+              <span class="check-icon" style="color:${school.color}">${icon('check', 16)}</span>
+              ${h}
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          适合哪些来访者？
+        </div>
+        <ul class="list-check">
+          ${school.suitableFor.map(s => `
+            <li>
+              <span class="check-icon" style="color:${school.color}">${icon('check', 16)}</span>
+              ${s}
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          治疗时长
+        </div>
+        <div class="duration-cards">
+          ${Object.values(school.duration).map(text => `<div class="duration-item">${text}</div>`).join('')}
+        </div>
+        <p class="duration-note">${school.durationNote}</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          优势与局限
+        </div>
+        <div class="two-col">
+          <div class="advantage-box">
+            <div class="box-title">
+              ${icon('checkCircle', 16)} 优势
+            </div>
+            <ul class="list-simple">
+              ${school.advantages.map(a => `<li>${a}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="disadvantage-box">
+            <div class="box-title">
+              ${icon('alertTriangle', 16)} 局限
+            </div>
+            <ul class="list-simple">
+              ${school.disadvantages.map(d => `<li>${d}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          代表人物
+        </div>
+        <div class="rep-list">
+          ${school.representative.map(r => `<span class="rep-tag">${r}</span>`).join('')}
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          <span style="color:${school.color}">${icon('bookOpen', 18)}</span>
+          推荐书目
+        </div>
+        <div class="books-grid">
+          ${school.books.map(b => `
+            <div class="book-item">
+              <div class="book-title">${b.title}</div>
+              <div class="book-author">${b.author}</div>
+              <div class="book-desc">${b.desc}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="quote-box">${school.quote}</div>
+
+    </div>
+  `;
+
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// 点击遮罩关闭
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// ===== 导航高亮 =====
+const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.dataset.section === current);
+  });
+});
+
+// ===== 滚动到指定区块（修复命名冲突） =====
+function scrollToSection(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ===== 滚动动画 =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
