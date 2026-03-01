@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心理咨询流派指南 · 找到属于你的疗愈方向</title>
+  <meta name="description" content="深度了解八大心理咨询流派，通过专业测试找到最适合你的咨询方向。精神动力、CBT、人本主义、ACT、DBT、创伤疗法、家庭系统、存在主义。">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<nav class="nav">
+  <a class="nav-brand" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
+    🧠 心理咨询流派指南
+  </a>
+  <ul class="nav-links">
+    <li><a data-section="schools-section" onclick="scrollTo('schools-section')">流派介绍</a></li>
+    <li><a data-section="quiz-section" onclick="scrollTo('quiz-section')">适合你的流派</a></li>
+    <li><a data-section="why-section" onclick="scrollTo('why-section')">为什么了解流派</a></li>
+  </ul>
+</nav>
+
+<!-- ===== 英雄区 ===== -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🌿 专业 · 有温度 · 有深度</div>
+    <h1>
+      找到属于你的<br>
+      <span>疗愈方向</span>
+    </h1>
+    <p class="hero-desc">
+      心理咨询有很多流派，不同的方法适合不同的人和问题。
+      了解它们，你就拥有了选择的权利——而不只是随机碰运气。
+    </p>
+    <div class="btn-group">
+      <button class="btn btn-primary btn-lg" onclick="scrollTo('quiz-section')">
+        ✨ 测试适合我的流派
+      </button>
+      <button class="btn btn-outline btn-lg" onclick="scrollTo('schools-section')">
+        浏览全部流派
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 为什么了解流派 ===== -->
+<section class="section section-alt" id="why-section">
+  <div class="section-header">
+    <div class="section-label">Why It Matters</div>
+    <h2 class="section-title">为什么你需要了解心理咨询流派？</h2>
+    <p class="section-desc">
+      很多人第一次寻求帮助时，并不知道"心理咨询"有这么多种类。
+      了解流派，不是为了变成专家，而是为了更好地照顾自己。
+    </p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-in">
+      <span class="why-icon">🎯</span>
+      <div class="why-title">更好地选择咨询师</div>
+      <div class="why-desc">了解你倾向的疗法方向，在找咨询师时可以主动询问他们擅长的流派，大大提高匹配成功率。</div>
+    </div>
+    <div class="why-card fade-in">
+      <span class="why-icon">🤝</span>
+      <div class="why-title">成为积极的合作者</div>
+      <div class="why-desc">当你理解治疗在做什么，你就不只是被动的"患者"，而是真正参与到自己疗愈过程中的主体。</div>
+    </div>
+    <div class="why-card fade-in">
+      <span class="why-icon">⏱️</span>
+      <div class="why-title">管理合理的期待</div>
+      <div class="why-desc">不同流派的起效速度和深度不同。了解这些，可以避免因为"怎么还没好"而过早放弃。</div>
+    </div>
+    <div class="why-card fade-in">
+      <span class="why-icon">💡</span>
+      <div class="why-title">每种方法都有其智慧</div>
+      <div class="why-desc">每个流派都有独特的人性观和治疗哲学。了解它们，也是了解不同的看待自己和世界的方式。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 流派介绍 ===== -->
+<section class="section" id="schools-section">
+  <div class="section-header">
+    <div class="section-label">The Schools</div>
+    <h2 class="section-title">八大主流心理咨询流派</h2>
+    <p class="section-desc">
+      点击任意流派，深入了解它的理念、适合人群、治疗方式、时长以及优劣势。
+    </p>
+  </div>
+  <div class="schools-grid" id="schools-grid">
+    <!-- 由 JS 动态生成 -->
+  </div>
+</section>
+
+<!-- ===== 测试区 ===== -->
+<section class="section" id="quiz-section">
+  <div class="section-header">
+    <div class="section-label">Find Your Match</div>
+    <h2 class="section-title">测试：哪种流派最适合你？</h2>
+    <p class="section-desc">
+      回答 10 个问题，我们将根据你的困扰类型、应对方式和偏好，为你找到最匹配的疗愈方向。
+    </p>
+  </div>
+
+  <div class="quiz-container">
+
+    <!-- 免责声明 -->
+    <div class="disclaimer">
+      <strong>⚠️ 重要提示：</strong>
+      本测试仅为科普参考，不能替代专业的心理评估和诊断。测试结果是基于你的回答给出的方向性建议，具体是否适合还需要与有执照的心理咨询师共同探讨。如果你正在经历严重的心理困扰，请直接寻求专业帮助。
+    </div>
+
+    <!-- 进度条 -->
+    <div class="quiz-progress">
+      <div class="progress-info">
+        <span>进度</span>
+        <span id="progress-text">1 / 10</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- 测试简介 -->
+    <div id="quiz-intro" class="quiz-intro">
+      <span class="quiz-intro-icon">🧭</span>
+      <h3>找到适合你的疗愈方向</h3>
+      <p>这个测试不评判对错，也没有"最好"的答案。只有最适合你此刻的方向。</p>
+      <p>请根据你<strong>近期最真实的状态</strong>来回答，不需要想太多。</p>
+      <div class="quiz-meta">
+        <span>📋 共 10 题</span>
+        <span>⏱️ 约 5 分钟</span>
+        <span>🔒 结果不会被保存</span>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="quiz.start()">
+        开始测试 →
+      </button>
+    </div>
+
+    <!-- 题目区 -->
+    <div id="quiz-questions" style="display:none"></div>
+
+    <!-- 结果区 -->
+    <div id="quiz-result" class="quiz-result"></div>
+
+  </div>
+</section>
+
+<!-- ===== 温馨提示区 ===== -->
+<section class="section section-alt">
+  <div class="section-header">
+    <div class="section-label">A Gentle Reminder</div>
+    <h2 class="section-title">在你开始寻找咨询师之前</h2>
+  </div>
+  <div class="why-grid" style="max-width:900px">
+    <div class="why-card fade-in">
+      <span class="why-icon">🌈</span>
+      <div class="why-title">流派不是全部</div>
+      <div class="why-desc">研究表明，治疗效果最重要的因素是治疗关系，而非具体的流派技术。一个你感到安全、被理解的咨询师，胜过所有理论。</div>
+    </div>
+    <div class="why-card fade-in">
+      <span class="why-icon">🔄</span>
+      <div class="why-title">整合疗法很常见</div>
+      <div class="why-desc">大多数有经验的咨询师都会整合多种流派，根据你的需要灵活调整。纯粹的单一流派反而少见。</div>
+    </div>
+    <div class="why-card fade-in">
+      <span class="why-icon">🗣️</span>
+      <div class="why-title">可以直接问咨询师</div>
+      <div class="why-desc">你完全可以在初次咨询时询问："您主要使用什么疗法？""这种方法会如何帮助我的问题？"这是你的权利。</div>
+    </div>
+    <div class="why-card fade-in">
+      <span class="why-icon">💙</span>
+      <div class="why-title">寻求帮助需要勇气</div>
+      <div class="why-desc">无论你最终选择哪种方式，迈出寻求帮助的这一步本身，已经是对自己莫大的善意。你值得被好好照顾。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 模态框 ===== -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <!-- 内容由JS动态生成 -->
+  </div>
+</div>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <p>
+    <strong>心理咨询流派指南</strong>
+    &nbsp;·&nbsp;
+    为心理健康科普而制作
+  </p>
+  <p style="margin-top:0.5rem">
+    本网站内容仅供科普教育目的，不构成专业诊断或治疗建议。
+    如有心理健康困扰，请联系有执照的心理健康专业人士。
+  </p>
+  <p style="margin-top:0.5rem">
+    <strong>危机热线：</strong>
+    全国心理援助热线 <a href="tel:400-161-9995">400-161-9995</a>
+    &nbsp;·&nbsp;
+    北京心理危机研究与干预中心 <a href="tel:010-82951332">010-82951332</a>
+  </p>
+  <p style="margin-top:1rem;opacity:0.5;font-size:0.8rem">
+    Made with 🧡 for mental health literacy
+  </p>
+</footer>
+
+<script src="data.js"></script>
+<script src="quiz.js"></script>
+
+</body>
+</html>
