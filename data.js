@@ -166,7 +166,9 @@ const SCHOOLS = {
       { title: '《成为一个人》', author: 'Carl Rogers（卡尔·罗杰斯）', desc: '人本主义的奠基之作，罗杰斯亲述治疗理念，读来如沐春风' },
       { title: '《存在主义心理治疗》', author: 'Irvin Yalom（欧文·亚隆）', desc: '从存在视角理解人的困境，亚隆的思想与人本主义高度共鸣，感人至深' },
       { title: '《聚焦》', author: 'Eugene Gendlin（根德林）', desc: '教你如何倾听身体内部的感受，找到改变的源头，简单而深刻' },
-      { title: '《当尼采哭泣》', author: 'Irvin Yalom', desc: '以小说形式探讨心理治疗与人的成长，适合所有对人本关怀感兴趣的读者' }
+      { title: '《当尼采哭泣》', author: 'Irvin Yalom', desc: '以小说形式探讨心理治疗与人的成长，适合所有对人本关怀感兴趣的读者' },
+      { title: '《个人形成论》', author: 'Carl Rogers（卡尔·罗杰斯）', desc: '罗杰斯详细阐述人格成长与咨询关系的核心著作，是学习以人为中心疗法的必读经典' },
+      { title: '《动机与人格》', author: '亚伯拉罕·马斯洛', desc: '马斯洛需求层次理论的权威原著，从人本视角重新定义心理健康与自我实现，有中文版' }
     ]
   },
 
@@ -335,7 +337,8 @@ const SCHOOLS = {
       { title: '《身体从未忘记》', author: 'Bessel van der Kolk（范·德·寇克）', desc: '创伤领域最重要的著作之一，从神经科学视角讲述创伤如何留存于身体，有中文版' },
       { title: '《唤醒老虎》', author: 'Peter Levine（彼得·列文）', desc: '躯体体验疗法创始人的代表作，用动物本能解释创伤，温暖而充满智慧' },
       { title: '《创伤与复原》', author: 'Judith Herman（朱迪思·赫尔曼）', desc: '复杂创伤研究的奠基著作，从社会视角理解创伤，深刻且具有时代意义' },
-      { title: '《我不是坏小孩》', author: 'Bruce Perry & Maia Szalavitz', desc: '以儿童创伤为切入，温柔地解释大脑如何在创伤中保护我们' }
+      { title: '《我不是坏小孩》', author: 'Bruce Perry & Maia Szalavitz', desc: '以儿童创伤为切入，温柔地解释大脑如何在创伤中保护我们' },
+      { title: '《深井效应》', author: '纳丁·伯克·哈里斯', desc: '儿科医生用大量研究揭示童年逆境经历（ACEs）对身心健康的深远影响，呼吁社会对创伤的系统性关注，有中文版' }
     ]
   },
 
@@ -391,7 +394,11 @@ const SCHOOLS = {
       { title: '《萨提亚家庭治疗模式》', author: 'Virginia Satir（弗吉尼亚·萨提亚）', desc: '萨提亚疗法经典，充满人情味，帮助你看见家庭沟通模式如何影响每个成员' },
       { title: '《与原生家庭和解》', author: '苏珊·福沃德', desc: '从系统视角理解原生家庭的影响，温和而有力地引导读者走向和解' },
       { title: '《家庭的秘密》', author: 'John Bradshaw（约翰·布拉德肖）', desc: '探讨家庭角色和规则如何塑造个人，从系统视角理解原生家庭的隐性力量' },
-      { title: '《家庭治疗技术》', author: 'Salvador Minuchin（米纽钦）', desc: '结构家庭治疗创始人的临床实践著作，案例丰富，适合深度了解' }
+      { title: '《家庭治疗技术》', author: 'Salvador Minuchin（米纽钦）', desc: '结构家庭治疗创始人的临床实践著作，案例丰富，适合深度了解' },
+      { title: '《热锅上的家庭》', author: '奥古斯都·纳皮尔 & 卡尔·惠特克', desc: '以一个真实家庭的治疗过程为主线，生动展现家庭治疗的完整历程，是最受欢迎的家庭治疗入门读物之一，有中文版' },
+      { title: '《家庭与夫妻治疗：案例与分析》', author: '萨尔瓦多·米纽钦', desc: '结构家庭治疗创始人通过丰富案例展示治疗技术，是学习系统家庭治疗的理论基石' },
+      { title: '《鲍文家庭系统治疗》', author: '默里·鲍文', desc: '鲍文系统理论的权威原著，深入探讨分化、三角化与代际传递，是理解家庭系统动力的深度理论读本' },
+      { title: '《循环提问》', author: '弗里茨·B·西蒙', desc: '系统疗法核心技术"循环提问"的专著，教你如何通过关系性提问引发来访者的新觉察，适合专业学习' }
     ]
   },
 
@@ -448,7 +455,10 @@ const SCHOOLS = {
       { title: '《持续的幸福》', author: 'Martin Seligman（塞利格曼）', desc: '塞利格曼PERMA模型的代表作，从"真实幸福论"到"幸福五要素"的体系升级，有中文版' },
       { title: '《心流：最优体验心理学》', author: 'Mihaly Csikszentmihalyi（契克森米哈伊）', desc: '心流理论经典之作，探讨人如何在完全投入中获得最深的满足感，有中文版' },
       { title: '《优势识别器》', author: 'Tom Rath（盖洛普）', desc: '基于VIA的优势测评工具书，帮助你找到并应用自己的签名优势' },
-      { title: '《活出最乐观的自己》', author: 'Martin Seligman', desc: '从"习得性无助"到"习得性乐观"，塞利格曼的早期经典，实用且充满洞见' }
+      { title: '《活出最乐观的自己》', author: 'Martin Seligman', desc: '从"习得性无助"到"习得性乐观"，塞利格曼的早期经典，实用且充满洞见' },
+      { title: '《积极心理治疗手册》', author: '塔亚布·拉希德 & 马丁·塞利格曼', desc: '积极心理学应用于临床治疗的权威实操手册，详述以优势为核心的PPT疗法，是该领域临床实践宝典' },
+      { title: '《清华积极心理学十六讲》', author: '彭凯平 & 赵昱鲲', desc: '国内积极心理学权威学者的本土化经典，融合东西方智慧，是了解积极心理学的最佳中文入门读物之一' },
+      { title: '《积极情绪的力量》', author: '芭芭拉·弗雷德里克森', desc: '弗雷德里克森"拓展-建构理论"的代表作，科学揭示积极情绪如何扩展思维、建构持久资源，有中文版' }
     ]
   },
 
@@ -505,7 +515,9 @@ const SCHOOLS = {
       { title: '《艺术治疗》', author: 'Judith Aron Rubin（鲁宾）', desc: '艺术治疗领域的权威入门书，全面介绍理论与实践，适合专业人士和对艺术治疗感兴趣的普通读者' },
       { title: '《鼓圈和社区音乐》', author: 'Arthur Hull', desc: '音乐治疗的应用探索，讲述通过节奏和共同音乐创作建立社群连接和疗愈体验' },
       { title: '《游戏治疗》', author: 'Garry Landreth（兰德瑞斯）', desc: '儿童游戏治疗的权威著作，帮助理解游戏如何成为儿童疗愈的自然语言' },
-      { title: '《身体的艺术语言》', author: 'Shaun McNiff', desc: '表达艺术治疗创始人之一的深思之作，探讨身体、意象与治疗的关系' }
+      { title: '《身体的艺术语言》', author: 'Shaun McNiff', desc: '表达艺术治疗创始人之一的深思之作，探讨身体、意象与治疗的关系' },
+      { title: '《表达性艺术治疗概论》', author: 'Stephen K. Levine & Ellen G. Levine', desc: '表达性艺术治疗领域的权威教材，系统介绍各种艺术形式（视觉、音乐、舞动、戏剧、诗歌）如何整合运用于心理治疗，理论与实践并重' },
+      { title: '《表达性艺术治疗13讲》', author: '何长珠', desc: '台湾本土化表达性艺术治疗专著，结合东方文化视角，适合中文读者入门与实践参考，包含丰富案例与操作示范' }
     ]
   },
 
@@ -562,7 +574,9 @@ const SCHOOLS = {
       { title: '《格式塔治疗》', author: 'Fritz Perls, Ralph Hefferline & Paul Goodman', desc: '格式塔治疗奠基之作，理论深刻，包含大量自我实验，适合认真探索者' },
       { title: '《格式塔咨询与心理治疗》', author: 'Phil Joyce & Charlotte Sills', desc: '现代格式塔的权威入门教材，清晰呈现格式塔的理论与实践方法' },
       { title: '《此在的奇迹》', author: 'Erving & Miriam Polster', desc: '珀尔斯的学生欧文·波尔斯特的代表作，以温暖的笔触描述格式塔的成长哲学' },
-      { title: '《空椅子》', author: 'Leslie Greenberg（格林伯格）', desc: '聚焦于格式塔核心技术——空椅技术——的深度介绍，附有丰富案例' }
+      { title: '《空椅子》', author: 'Leslie Greenberg（格林伯格）', desc: '聚焦于格式塔核心技术——空椅技术——的深度介绍，附有丰富案例' },
+      { title: '《格式塔咨询与治疗技术》（第三版）', author: 'Phil Joyce & Charlotte Sills', desc: '当代格式塔治疗最全面的实务手册，清晰讲解觉察、接触、实验等核心技术，是格式塔治疗师必读的进阶教材，已有中文版' },
+      { title: '《格式塔心理咨询理论与实践》', author: '王铮', desc: '国内格式塔疗法本土化的重要著作，结合中国文化背景讲解格式塔理论，是学习格式塔疗法的中文首选参考书' }
     ]
   },
 
@@ -619,7 +633,8 @@ const SCHOOLS = {
       { title: '《合作性语言系统与治疗》', author: 'Harlene Anderson（哈琳·安德森）', desc: '合作取向治疗的核心著作，详细阐述"不知道的立场"和对话性治疗哲学' },
       { title: '《治疗关系中的对话》', author: 'Harlene Anderson & Per Jensen', desc: '探讨合作取向在当代多元文化背景下的应用，视角广阔，充满启发' },
       { title: '《后现代实践》', author: 'Sheila McNamee & Kenneth Gergen', desc: '后现代主义与心理治疗的经典结合，探讨社会建构主义如何改变治疗关系' },
-      { title: '《关系的责任》', author: 'Kenneth Gergen（肯尼斯·格根）', desc: '社会建构主义大师的思想集成，揭示语言、关系与现实建构的内在联系' }
+      { title: '《关系的责任》', author: 'Kenneth Gergen（肯尼斯·格根）', desc: '社会建构主义大师的思想集成，揭示语言、关系与现实建构的内在联系' },
+      { title: '《合作取向治疗》', author: 'Harlene Anderson', desc: '哈琳·安德森详细阐述合作取向治疗理论与实践的代表作，展示如何在治疗关系中真正落实"不知道的立场"与平等对话，是了解合作取向治疗的必读经典' }
     ]
   },
 
@@ -732,7 +747,8 @@ const SCHOOLS = {
       { title: '《活出生命的意义》', author: 'Viktor Frankl（维克多·弗兰克尔）', desc: '意义疗法的灵魂之作，弗兰克尔在纳粹集中营中寻找意义的亲历，令人震撼，有中文版' },
       { title: '《存在主义心理治疗》', author: 'Irvin Yalom（欧文·亚隆）', desc: '从死亡、自由、孤独和无意义四个视角深入探讨，是存在主义治疗的权威著作' },
       { title: '《直视骄阳》', author: 'Irvin Yalom', desc: '亚隆关于死亡恐惧的沉思，告诉我们如何与死亡同行而活得更充实，有中文版' },
-      { title: '《存在的勇气》', author: 'Paul Tillich（保罗·蒂利希）', desc: '神学家蒂利希探讨焦虑的本质与存在的勇气，是存在主义治疗思想的重要根源' }
+      { title: '《存在的勇气》', author: 'Paul Tillich（保罗·蒂利希）', desc: '神学家蒂利希探讨焦虑的本质与存在的勇气，是存在主义治疗思想的重要根源' },
+      { title: '《给心理治疗师的礼物》', author: '欧文·亚隆', desc: '亚隆写给心理治疗师的85则智慧箴言，每则都是一个充满温度的临床故事，既是给治疗师的专业指引，也是对存在主义治疗精神的生动诠释，有中文版' }
     ]
   },
 
@@ -788,7 +804,9 @@ const SCHOOLS = {
       { title: '《焦点解决短期治疗》', author: 'Insoo Kim Berg & Peter De Jong', desc: 'SFBT的权威入门书，充满真实案例，帮助理解如何从优势视角开展工作' },
       { title: '《改变》', author: 'Paul Watzlawick 等', desc: '简短干预与改变的经典著作，与SFBT的思路高度契合，通俗有趣' },
       { title: '《成功的辅导》', author: 'John J. Murphy', desc: '将SFBT应用于青少年和学校场景的实用指南，案例生动' },
-      { title: '《夜会超人》', author: 'Bill O\'Hanlon（比尔·奥汉龙）', desc: '以故事形式呈现焦点与解决导向的思维，轻松幽默，适合所有人阅读' }
+      { title: '《夜会超人》', author: 'Bill O\'Hanlon（比尔·奥汉龙）', desc: '以故事形式呈现焦点与解决导向的思维，轻松幽默，适合所有人阅读' },
+      { title: '《超越奇迹：焦点解决短期治疗》', author: 'Steve de Shazer & Yvonne Dolan', desc: 'SFBT创始人晚年集大成之作，深入展示"奇迹问题"背后的完整治疗哲学，有中文版' },
+      { title: '《尊重与希望：焦点解决短期治疗》', author: '许维素', desc: '台湾SFBT权威学者的本土化专著，理论与案例并重，是华语世界最佳入门读本之一' }
     ]
   },
 
@@ -844,7 +862,10 @@ const SCHOOLS = {
       { title: '《叙事疗法》', author: 'Michael White & David Epston', desc: '叙事疗法的奠基之作，通过真实案例阐述如何将问题外化、重写来访者的生命故事' },
       { title: '《叙事疗法的实践》', author: 'Alice Morgan', desc: '叙事疗法的入门好书，语言清晰友好，适合初步了解叙事思路的读者' },
       { title: '《重新叙说生命》', author: 'Michael White', desc: '怀特晚年著作，深入探讨叙事疗法的核心概念与实践地图，内容丰富深刻' },
-      { title: '《自我的故事》', author: 'Dan McAdams', desc: '从心理学角度探讨人如何通过叙事构建身份，与叙事疗法的理论基础高度契合' }
+      { title: '《自我的故事》', author: 'Dan McAdams', desc: '从心理学角度探讨人如何通过叙事构建身份，与叙事疗法的理论基础高度契合' },
+      { title: '《叙事疗法实践地图》', author: '迈克尔·怀特', desc: '怀特系统整理叙事疗法核心实践地图的集大成之作，涵盖外化、重写、见证等完整技术框架，有中文版' },
+      { title: '《叙事的力量：故事、知识、权力》', author: '迈克尔·怀特 & 大卫·艾普斯顿', desc: '叙事疗法的经典原著，阐述故事如何塑造身份认同，以及治疗如何帮助来访者重写自己的故事' },
+      { title: '《叙事心理治疗》', author: '李明', desc: '国内叙事疗法权威学者的本土化著作，结合中国文化背景呈现叙事疗法的理论与实践' }
     ]
   },
 
