@@ -141,7 +141,12 @@ function showResult() {
     });
   });
 
-  const topId = sorted[0][0];
+  // 按百分比重新排序
+  const sortedByPct = sorted
+    .map(([id, score]) => [id, score, Math.round(score / (maxPossible[id] || 1) * 100)])
+    .sort((a, b) => b[2] - a[2]);
+
+  const topId = sortedByPct[0][0];
   const topSchool = SCHOOLS[topId];
 
   const resultEl = document.getElementById('quiz-result');
@@ -162,10 +167,8 @@ function showResult() {
       <div class="scores-title">
         ${icon('barChart', 20)} 你的匹配度分析（前5名）
       </div>
-      ${sorted.slice(0, 5).map(([id, score]) => {
+      ${sortedByPct.slice(0, 5).map(([id, score, pct]) => {
         const s = SCHOOLS[id];
-        const possible = maxPossible[id] || 1;
-        const pct = Math.round(score / possible * 100);
         return `
           <div class="score-bar-item">
             <div class="score-bar-header">
@@ -254,13 +257,13 @@ function showResult() {
     </div>
 
     <!-- 其他高匹配流派 -->
-    ${sorted.length > 1 ? `
+    ${sortedByPct.length > 1 ? `
     <div class="result-detail-card">
       <div class="result-detail-title">
         ${icon('share2', 20)} 你也可以了解这些流派
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:0.25rem">
-        ${sorted.slice(1, 5).map(([id]) => {
+        ${sortedByPct.slice(1, 5).map(([id]) => {
           const s = SCHOOLS[id];
           return `
             <button onclick="openDetailModal('${id}')"
