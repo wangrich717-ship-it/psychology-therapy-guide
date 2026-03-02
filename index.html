@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>心理咨询流派指南 · 找到属于你的疗愈方向</title>
-  <meta name="description" content="深度了解十一大心理咨询流派，通过专业测试找到最适合你的咨询方向。精神动力、CBT、人本主义、ACT、DBT、创伤疗法、家庭系统、存在主义、焦点解决、叙事疗法、正念疗法。">
+  <meta name="description" content="深度了解十六大心理咨询流派，通过专业测试找到最适合你的咨询方向。CBT、ACT、正念、DBT、SFBT、人本主义、精神动力、创伤疗法、家庭系统、叙事、积极心理学、表达艺术、存在主义、格式塔、合作取向、森田疗法。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
@@ -69,9 +69,9 @@
 <section class="section" id="schools-section">
   <div class="section-header">
     <div class="section-label">The Schools</div>
-    <h2 class="section-title">八大主流心理咨询流派</h2>
+    <h2 class="section-title">十六大心理咨询流派</h2>
     <p class="section-desc">
-      点击任意流派，深入了解它的理念、适合人群、治疗方式、时长、优劣势和推荐书目。
+      点击任意流派，深入了解它的起源发展、核心理念、相关理论、适合人群、治疗方式、时长、优劣势和推荐书目。
     </p>
   </div>
   <div class="schools-grid" id="schools-grid"></div>
@@ -177,7 +177,7 @@ WHY_ITEMS.forEach((item, i) => {
 
 // ===== 流派卡片渲染 =====
 const schoolsGrid = document.getElementById('schools-grid');
-Object.values(SCHOOLS).forEach((school, i) => {
+SCHOOL_ORDER.map(id => SCHOOLS[id]).forEach((school, i) => {
   const card = document.createElement('div');
   card.className = 'school-card fade-in';
   card.style.setProperty('--card-color', school.color);
@@ -285,6 +285,26 @@ function openModal(schoolId) {
         </div>
         <p style="color:var(--text-body);line-height:1.9;font-size:0.97rem">${school.overview}</p>
       </div>
+
+      ${school.origin ? `
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          起源与发展
+        </div>
+        <p style="color:var(--text-body);line-height:1.9;font-size:0.97rem">${school.origin}</p>
+      </div>
+      ` : ''}
+
+      ${school.relatedTheories ? `
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          涉及理论与心理学内容
+        </div>
+        <div class="philosophy-box" style="border-left-color:${school.color};white-space:pre-line">${school.relatedTheories}</div>
+      </div>
+      ` : ''}
 
       <div class="modal-section">
         <div class="modal-section-title">

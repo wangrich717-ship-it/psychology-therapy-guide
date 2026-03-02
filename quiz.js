@@ -1,5 +1,18 @@
 // ===== 测试逻辑（quiz.html 专用） =====
 
+// 将颜色与白色混合，factor=0.4 表示向白色靠近40%，得到柔和浅色
+function lightenColor(hex, factor) {
+  hex = hex.replace('#', '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+  const lr = Math.round(r + (255 - r) * factor);
+  const lg = Math.round(g + (255 - g) * factor);
+  const lb = Math.round(b + (255 - b) * factor);
+  return `rgb(${lr},${lg},${lb})`;
+}
+
 let currentQ = 0;
 let answers = [];
 let scores = {};
@@ -114,9 +127,22 @@ function showResult() {
     return;
   }
 
+  // 计算每个流派的理论最高可得分（每道题该流派所有选项中的最高分）
+  const maxPossible = {};
+  QUIZ_QUESTIONS.forEach(q => {
+    const qMax = {};
+    q.options.forEach(opt => {
+      Object.entries(opt.scores).forEach(([school, s]) => {
+        qMax[school] = Math.max(qMax[school] || 0, s);
+      });
+    });
+    Object.entries(qMax).forEach(([school, m]) => {
+      maxPossible[school] = (maxPossible[school] || 0) + m;
+    });
+  });
+
   const topId = sorted[0][0];
   const topSchool = SCHOOLS[topId];
-  const maxScore = sorted[0][1];
 
   const resultEl = document.getElementById('quiz-result');
   resultEl.innerHTML = `
@@ -138,7 +164,8 @@ function showResult() {
       </div>
       ${sorted.slice(0, 5).map(([id, score]) => {
         const s = SCHOOLS[id];
-        const pct = Math.min(90, Math.round(score / maxScore * 100));
+        const possible = maxPossible[id] || 1;
+        const pct = Math.round(score / possible * 100);
         return `
           <div class="score-bar-item">
             <div class="score-bar-header">
@@ -146,7 +173,7 @@ function showResult() {
               <span class="score-bar-val">${pct}%</span>
             </div>
             <div class="score-bar-bg">
-              <div class="score-bar-fill" style="background:${s.color}" data-width="${pct}"></div>
+              <div class="score-bar-fill" style="background:${lightenColor(s.color, 0.35)}" data-width="${pct}"></div>
             </div>
           </div>
         `;
@@ -262,10 +289,7 @@ function showResult() {
       <button class="btn btn-outline" onclick="restartQuiz()">
         ${icon('refreshCw', 16)} 重新测试
       </button>
-      <button class="btn btn-primary" onclick="openDetailModal('${topId}')">
-        深入了解 ${topSchool.name}
-      </button>
-      <a href="index.html" class="btn btn-ghost" style="border:2px solid var(--border)">
+      <a href="index.html" class="btn btn-primary">
         ${icon('arrowRight', 16)} 浏览全部流派
       </a>
     </div>
@@ -324,6 +348,26 @@ function openDetailModal(schoolId) {
         </div>
         <p style="color:var(--text-body);line-height:1.9;font-size:0.97rem">${school.overview}</p>
       </div>
+
+      ${school.origin ? `
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          起源与发展
+        </div>
+        <p style="color:var(--text-body);line-height:1.9;font-size:0.97rem">${school.origin}</p>
+      </div>
+      ` : ''}
+
+      ${school.relatedTheories ? `
+      <div class="modal-section">
+        <div class="modal-section-title">
+          <span class="title-bar" style="background:${school.color}"></span>
+          涉及理论与心理学内容
+        </div>
+        <div class="philosophy-box" style="border-left-color:${school.color};white-space:pre-line">${school.relatedTheories}</div>
+      </div>
+      ` : ''}
 
       <div class="modal-section">
         <div class="modal-section-title">
